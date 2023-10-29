@@ -1,69 +1,40 @@
 package org.example.models;
 
-import jdk.jfr.Category;
-
-import java.sql.Timestamp;
-
 public class Product {
+    private int id;
 
-  private int id;
+    private String title;
 
-  private String title;
+    public Product(int id, String title, double price, Category category) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.category = category;
+    }
 
-  private String desc;
+    public int getId() {
+        return id;
+    }
 
-  private double price;
 
-  private int stock;
+    public String getTitle() {
+        return title;
+    }
 
-  private Category category;
 
-  public int getId() {
-    return id;
-  }
 
-  public void setId(int id) {
-    this.id = id;
 
-  }
 
-  public String getTitle() {
-    return title;
-  }
+    public double getPrice() {
+        return price;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
 
-  public String getDesc() {
-    return desc;
-  }
+    public Category getCategory() {
+        return category;
+    }
 
-  public void setDesc(String desc) {
-    this.desc = desc;
-  }
 
-  public double getPrice() {
-    return price;
-  }
-
-  public void setPrice(double price) {
-    this.price = price;
-  }
-
-  public int getStock() {
-    return stock;
-  }
-
-  public void setStock(int stock) {
-    this.stock = stock;
-  }
-
-  public Category getCategory() {
-    return category;
-  }
-
-  public void setCategory(Category category) {
-    this.category = category;
-  }
+    private double price;
+    private Category category;
 }

@@ -1,21 +1,19 @@
 package org.example.view;
 
-import org.example.utilis.StringUtil;
+import org.example.util.StringUtils;
 
-
-import static org.example.utilis.Utilis.println;
-
+import java.sql.SQLOutput;
 
 public class WelcomePage {
 
-  public void welcome() {
+    public void welcome() {
 
-    println(StringUtil.WELCOME_MESSAGE);
+        System.out.println(StringUtils.WELCOME_MESSAGE);
 
-  }
+    }
 
-  public void printAuthMenu() {
-    println(StringUtil.AUTH_MENU);
-  }
-}
+    public void printAuthMenu(){
 
+    }
+
+    }

@@ -1,16 +1,20 @@
 package org.example.view;
 
-import org.example.controller.HomeController;
-import org.example.utilis.StringUtil;
+import org.example.util.StringUtils;
 
-import static org.example.utilis.Utilis.println;
+import static org.example.util.Utils.println;
 
 public class HomePage {
+    public void printMenu() {
 
-  public void printMenu()
-  {
-    println(StringUtil.HOME_WELCOME);
-    println(StringUtil.HOME_MENU);
-  }
+      try {
+        Thread.sleep(1000);
+        println(StringUtils.HOME_WELCOME);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
 
+
+        System.out.println(StringUtils.HOME_MENU);
+    }
 }

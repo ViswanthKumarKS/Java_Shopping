@@ -1,19 +1,33 @@
 package org.example.view;
 
-import static org.example.utilis.Utilis.println;
+import org.example.util.StringUtils;
 
-public class Loginpage {
-  public void invalidCrdentials() {
-    try {
-      println("#---------------------#");
-      println("Invalid Credentials!!!");
-      println("#---------------------#");
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
+import static org.example.util.Utils.println;
+
+public class LoginPage {
+
+
+    public void printInvalidCredentials(){
+
+        try {
+
+
+            System.out.println("#---------------------#");
+            System.out.println(StringUtils.INVALID_CREDENTIALS);
+            System.out.println("#---------------------#");
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+  public void loginSuccess() {
+      try
+      {
+        Thread.sleep(1500);
+        println(StringUtils.LOGIN_SUCCESS);
+      } catch (Exception e) {
+          throw new RuntimeException(e);
+      }
   }
 }
-
-
-

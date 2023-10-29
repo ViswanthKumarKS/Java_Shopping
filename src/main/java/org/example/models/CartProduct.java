@@ -1,24 +1,28 @@
 package org.example.models;
 
 public class CartProduct {
+    private Product product;
+    private int count;
 
-  private Product products;
+    public CartProduct(Product userProduct, int count) {
+        this.product = userProduct;
+        this.count = count;
 
-  private int count;
+    }
 
-  public Product getProducts() {
-    return products;
-  }
+    public Product getProduct() {
+        return product;
+    }
 
-  public void setProducts(Product products) {
-    this.products = products;
-  }
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
-  public int getCount() {
-    return count;
-  }
+    public int getCount() {
+        return count;
+    }
 
-  public void setCount(int count) {
-    this.count = count;
-  }
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

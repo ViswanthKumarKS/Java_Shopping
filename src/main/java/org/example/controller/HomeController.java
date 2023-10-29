@@ -1,52 +1,60 @@
 package org.example.controller;
 
-import org.example.controller.Input.IHomeController;
-import org.example.utilis.AppException;
-import org.example.utilis.StringUtil;
+import org.example.util.AppException;
+import org.example.util.AppInput;
+import org.example.util.StringUtils;
 import org.example.view.HomePage;
 
-import static org.example.utilis.AppInput.enterInt;
-import static org.example.utilis.AppInput.enterString;
-import static org.example.utilis.Utilis.println;
+import static org.example.util.UserUtil.setLoggedUser;
+import static org.example.util.Utils.println;
 
-public class HomeController implements IHomeController {
-
-  private final HomePage homePage;
-  private final AuthController authController;
-
-  public HomeController(AuthController authController) {
-    homePage = new HomePage();
-    this.authController = authController;
-
-  }
-
-  public void printMenu() {
-    homePage.printMenu();
-
-    try {
-      int choice = enterInt(StringUtil.ENTER_CHOICE);
-      if (choice == 1) {
-        CategoryController.printMenu();
-      } else if (choice == 2) {
-
-      } else if (choice == 3) {
-
-      } else if (choice == 4) {
-
-      } else if (choice == 5) {
-
-      } else {
-        invalidChoice(new AppException(StringUtil.INVALID_CHOICE));
-      }
+public class HomeController {
+    private final HomePage homePage;
+    private final AuthController authController;
+    private final CategoryController categoryController;
+    private  final ProductController productController;
+    private  final CartController cartController;
+    private final OrderController orderController;
 
 
-    } catch (AppException appException) {
-      invalidChoice(appException);
+    public HomeController(AuthController authController) {
+        this.homePage = new HomePage();
+        this.authController = authController;
+        this.categoryController = new CategoryController(this);
+        this.productController=new ProductController(this);
+        this.cartController=new CartController(this);
+        orderController = new OrderController(this);
     }
-  }
 
-  private void invalidChoice(AppException a) {
-    println(a.getMessage());
-    printMenu();
-  }
+    public void printMenu() {
+
+        homePage.printMenu();
+        try {
+            int choice = AppInput.enterInt(StringUtils.ENTER_CHOICE);
+            if (choice == 1) {
+                categoryController.printMenu();
+            } else if (choice == 2) {
+                productController.showProducts(0);
+            } else if (choice == 3) {
+                cartController.printCart();
+            } else if (choice == 4) {
+                orderController.printOrders();
+                printMenu();
+            } else if (choice == 5) {
+              println(StringUtils.LOGOUT_MESS);
+                setLoggedUser(null);
+                authController.authMenu();
+            } else {
+                invalidChoice(new AppException(StringUtils.INVALID_CHOICE));
+            }
+
+        } catch (AppException e) {
+            invalidChoice(e);
+        }
+    }
+
+    private void invalidChoice(AppException appException) {
+        System.out.println(appException.getMessage());
+        printMenu();
+    }
 }

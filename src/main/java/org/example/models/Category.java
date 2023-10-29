@@ -1,26 +1,23 @@
 package org.example.models;
 
-import java.sql.Timestamp;
-
 public class Category {
+    private int id;
+    private String categoryName;
 
-  private int id;
+    public Category(int id, String categoryName) {
+        this.id = id;
+        this.categoryName = categoryName;
+    }
 
-  private String Categoryname;
 
-  public int getId() {
-    return id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public String getCategoryName() {
+        return categoryName;
+    }
 
-  public String getCategoryname() {
-    return Categoryname;
-  }
 
-  public void setCategoryname(String categoryname) {
-    Categoryname = categoryname;
-  }
+
 }

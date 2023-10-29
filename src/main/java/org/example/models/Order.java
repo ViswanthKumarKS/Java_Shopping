@@ -1,48 +1,44 @@
 package org.example.models;
 
-import java.security.Timestamp;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Order {
+    private Timestamp id;
+    private Date date;
+    private User user;
+    private ArrayList<CartProduct> cartProducts;
 
-  private int id;
+    public Timestamp getId() {
+        return id;
+    }
 
-  private Date date;
+    public void setId(Timestamp id) {
+        this.id = id;
+    }
 
-  private User user;
+    public Date getDate() {
+        return date;
+    }
 
-  private Cart cart;
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public User getUser() {
+        return user;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-  public Date getDate() {
-    return date;
-  }
+    public ArrayList<CartProduct> getCartProducts() {
+        return cartProducts;
+    }
 
-  public void setDate(Date date) {
-    this.date = date;
-  }
-
-  public User getUser() {
-    return user;
-  }
-
-  public void setUser(User user) {
-    this.user = user;
-  }
-
-  public Cart getCart() {
-    return cart;
-  }
-
-  public void setCart(Cart cart) {
-    this.cart = cart;
-  }
+    public void setCartProducts(ArrayList<CartProduct> cartProducts) {
+        this.cartProducts = cartProducts;
+    }
 }

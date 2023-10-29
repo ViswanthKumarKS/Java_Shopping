@@ -1,38 +1,35 @@
 package org.example.models;
 
-import java.sql.Array;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Cart {
+    private Timestamp id;
+    private User user;
 
-  private int id;
+    private ArrayList<CartProduct> cartProducts;
 
-  private User user;
+    public Timestamp getId() {
+        return id;
+    }
 
-  private ArrayList<CartProduct> cartProducts;
+    public void setId(Timestamp id) {
+        this.id = id;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public User getUser() {
+        return user;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-  public User getUser() {
-    return user;
-  }
+    public ArrayList<CartProduct> getCartProducts() {
+        return cartProducts;
+    }
 
-  public void setUser(User user) {
-    this.user = user;
-  }
-
-  public ArrayList<CartProduct> getCartProducts() {
-    return cartProducts;
-  }
-
-  public void setCartProducts(ArrayList<CartProduct> cartProducts) {
-    this.cartProducts = cartProducts;
-  }
+    public void setCartProducts(ArrayList<CartProduct> cartProducts) {
+        this.cartProducts = cartProducts;
+    }
 }
