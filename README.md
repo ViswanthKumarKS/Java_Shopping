@@ -1,14 +1,12 @@
 # Java_Shopping
-                     Java-Shopping
-
 This application has the following sections:
-  1.Assests
-  2.Controlleer
-  3.Models
-  4.Util
-  5.View
-  6.App
-  In Assests we can contain
+   1.Assests
+   2.Controlleer
+   3.Models
+   4.Util
+   5.View
+   6.App
+  #In Assests we can contain
    -Cerdentials.csv:
       -It can be stored the details of the user like email,password,name.
    -Category.csv
@@ -16,17 +14,16 @@ This application has the following sections:
    -Products.csv
       -It can be contain the product details.
 
-  Controller can be contains
-      AppController
+#  Controller can be contains
+     -> AppController
       -It contains welcome page and AuthController
       AuthController
       -In Auth controller Contain login and register and validatedUser
       -In register i faced the challenge by reading the file from csv file i have to creater filewrite for entering the deatlis like id,name,password,Reenter password.
-     
       
-      HomeController
-      -In homeController it can  be contain the home welcome 
-      -It can contain 5 types
+     -> HomeController
+        -In homeController it can  be contain the home welcome 
+        -It can contain 5 types
       1.Categories
               CategortyController
       -In CategoryController contains printMenu().
@@ -55,6 +52,8 @@ This application has the following sections:
        In logout we can go back to the login
       Challenges faced:
       -In addtocart i faced the challenges create the new user cart and add the products into the cart and addedinto the cart
+
+
 
       
       
