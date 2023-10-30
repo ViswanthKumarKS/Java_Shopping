@@ -1,5 +1,5 @@
 # Java_Shopping
-#This java console application for E-Commerce has the following sections:
+This java console application for E-Commerce has the following sections:
 
 Login - Existing User and Admin
 Register - New User
